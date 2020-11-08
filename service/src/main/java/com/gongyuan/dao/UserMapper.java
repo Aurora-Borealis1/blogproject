@@ -1,13 +1,12 @@
 package com.gongyuan.dao;
 
 import com.gongyuan.model.User;
-import org.springframework.stereotype.Repository;
 
 /**
  * @author wushangyi
  * @date 2020/11/8 11:38
  */
-@Repository
+//@Repository
 public interface UserMapper {
     void insertUser(User user);
 

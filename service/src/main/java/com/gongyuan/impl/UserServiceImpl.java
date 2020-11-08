@@ -4,7 +4,6 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.gongyuan.dao.UserMapper;
 import com.gongyuan.model.User;
 import com.gongyuan.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * @author wushangyi
@@ -12,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 @Service
 public class UserServiceImpl implements UserService {
-    @Autowired
+//    @Autowired
     UserMapper userMapper;
 
     @Override
