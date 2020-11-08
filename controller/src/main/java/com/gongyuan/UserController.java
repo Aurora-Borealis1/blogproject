@@ -1,6 +1,8 @@
 package com.gongyuan;
 
 
+import com.gongyuan.model.User;
+import com.gongyuan.service.UserService;
 import jdk.nashorn.internal.ir.annotations.Reference;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestBody;
