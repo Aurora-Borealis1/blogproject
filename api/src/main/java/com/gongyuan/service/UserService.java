@@ -9,7 +9,7 @@ import com.gongyuan.model.User;
 public interface UserService {
     int insertUser(User user);
 
-    void updateUser(String trueName,String password);
+    void updateUser(String name,String password);
 
-    void updateUserPsw(String trueName,String tel);
+    void updateUserPsw(String name,String tel);
 }

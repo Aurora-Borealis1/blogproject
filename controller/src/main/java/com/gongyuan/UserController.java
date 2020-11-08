@@ -25,12 +25,12 @@ public class UserController {
     @RequestMapping("/userRegister")
     public String userRegister(@RequestBody User user) {
         int result;
-        //真实姓名及密码不能为空
+        //用户名及密码不能为空
         if (StringUtils.isEmpty(user)) {
             return null;
         }
-        if (null == user.getTureName() || "".equals(user.getTureName()) || null == user.getPassword() || "".equals(user.getPassword())) {
-            return "真实姓名及密码不能为空！";
+        if (null == user.getName() || "".equals(user.getName()) || null == user.getPassword() || "".equals(user.getPassword())) {
+            return "用户名及密码不能为空！";
         }
         result = userService.insertUser(user);
         return "注册成功！";
@@ -40,20 +40,20 @@ public class UserController {
      * 用户登陆
      */
     @RequestMapping("/userlogin")
-    public void userlogin(@RequestParam("trueName") String trueName, @RequestParam("password") String password) {
+    public void userlogin(@RequestParam("name") String name, @RequestParam("password") String password) {
     }
 
     /**
      * 修改用户信息
      */
     @RequestMapping("/userRegister")
-    public void updateUser(@RequestParam("trueName") String trueName, @RequestParam("password") String password) {
+    public void updateUser(@RequestParam("name") String name, @RequestParam("password") String password) {
     }
 
     /**
      * 修改用户密码
      */
     @RequestMapping("/userRegister")
-    public void updateUserPsw(@RequestParam("trueName") String trueName, @RequestParam("tel") String tel) {
+    public void updateUserPsw(@RequestParam("name") String name, @RequestParam("tel") String tel) {
     }
 }
