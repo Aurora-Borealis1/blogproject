@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author Tww
- * @date 2020/11/810:02 下午
+ * @date 2020/11/8 10:02 下午
  */
 @ControllerAdvice
 public class InterceptResponse implements ResponseBodyAdvice<Object> {

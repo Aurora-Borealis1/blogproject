@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 /**
  * @author Tww
- * @date 2020/11/812:59 下午
+ * @date 2020/11/8 12:59 下午
  */
 @EnableDubbo
 @SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})

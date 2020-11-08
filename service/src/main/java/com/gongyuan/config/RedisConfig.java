@@ -9,7 +9,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
  * @author Tww
- * @date 2020/11/86:23 下午
+ * @date 2020/11/8 6:23 下午
  */
 @Configuration
 public class RedisConfig {
