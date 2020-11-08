@@ -22,8 +22,11 @@
         <lombok.version>1.18.10</lombok.version>
         <log4j.version>1.2.17</log4j.version>
         <mysql.version>8.0.18</mysql.version>
+        <dubbo.starter.version>0.2.0</dubbo.starter.version>
         <druid.version>1.1.10</druid.version>
         <mybatis.spring.boot.version>1.3.1</mybatis.spring.boot.version>
+        <zookeeper.version>3.4.13</zookeeper.version>
+        <curator-framework.version>4.0.1</curator-framework.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -58,6 +61,23 @@
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis.spring.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo.starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper</artifactId>
+                <version>${zookeeper.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <version>${curator-framework.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
