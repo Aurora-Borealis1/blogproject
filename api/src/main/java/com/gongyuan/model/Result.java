@@ -15,9 +15,7 @@ public class Result {
 
 
     public static Result getSuccessfulResult(Object data){
-        Result result = new Result();
-        result.setCode("200");
-        result.setMsg("正常返回");
+        Result result = getSuccessfulResult();
         result.setData(data);
         return result;
     }
@@ -27,6 +25,18 @@ public class Result {
         Result result = new Result();
         result.setCode("200");
         result.setMsg("正常返回");
+        return result;
+    }
+
+    public static Result getErrorResult(){
+        Result result = new Result();
+        result.setCode("9999");
+        result.setMsg("接口调用异常");
+        return result;
+    }
+    public static Result getErrorResult(Object data){
+        Result result = getErrorResult();
+        result.setData(data);
         return result;
     }
 }
