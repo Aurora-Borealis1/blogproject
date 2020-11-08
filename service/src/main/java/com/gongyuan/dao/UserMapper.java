@@ -1,6 +1,5 @@
 package com.gongyuan.dao;
 
-import com.gongyuan.model.User;
 import org.springframework.stereotype.Repository;
 
 /**

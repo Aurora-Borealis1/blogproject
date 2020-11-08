@@ -1,4 +1,4 @@
-package com.gongyuan.service.impl;
+package com.gongyuan.impl;
 
 import com.gongyuan.dao.UserMapper;
 import com.gongyuan.model.User;

@@ -1,8 +1,7 @@
 package com.gongyuan;
 
-import com.gongyuan.model.User;
-import com.gongyuan.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import jdk.nashorn.internal.ir.annotations.Reference;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class UserController {
-    @Autowired
+    @Reference
     UserService userService;
 
     /**
