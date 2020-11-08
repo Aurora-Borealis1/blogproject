@@ -1,6 +1,8 @@
 package com.gongyuan.controller;
 
 
+import com.gongyuan.model.Result;
+import com.gongyuan.model.ServiceException;
 import com.gongyuan.model.User;
 import com.gongyuan.service.UserService;
 import jdk.nashorn.internal.ir.annotations.Reference;
@@ -22,16 +24,17 @@ public class UserController {
      * 用户注册
      */
     @RequestMapping("/userRegister")
-    public String userRegister(@RequestBody User user) {
+    public Result userRegister(@RequestBody User user)  {
         //用户名及密码不能为空
         if (user==null) {
             return null;
         }
         if (null == user.getName() || "".equals(user.getName().trim()) || null == user.getPassword() || "".equals(user.getPassword().trim())) {
-            return "用户名及密码不能为空！";
+            throw new ServiceException("9999","参数异常");
         }
-        userService.insertUser(user);
-        return "注册成功！";
+         userService.insertUser(user);
+        return Result.getSuccessfulResult("用户注册成功");
+
     }
 
     /**
