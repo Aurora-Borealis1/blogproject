@@ -8,6 +8,11 @@ import com.gongyuan.model.User;
  */
 //@Repository
 public interface UserMapper {
+
+
+
+    User queryUserByname(String name);
+
     void insertUser(User user);
 
     void updateUser(String name,String password);
