@@ -1,4 +1,4 @@
-package com.gongyuan.impl;
+package com.gongyuan.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.gongyuan.dao.UserMapper;
@@ -9,7 +9,7 @@ import com.gongyuan.service.UserService;
  * @author wushangyi
  * @date 2020/11/8 10:58
  */
-@Service
+//@Service
 public class UserServiceImpl implements UserService {
 //    @Autowired
     UserMapper userMapper;
