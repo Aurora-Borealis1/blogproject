@@ -7,9 +7,11 @@ import com.gongyuan.model.User;
  * @date 2020/11/8 10:55
  */
 public interface UserService {
+    User queryUserByname(String name);
+
     int insertUser(User user);
 
-    void updateUser(String name,String password);
+    int updateUser(User user);
 
-    void updateUserPsw(String name,String tel);
+    int updateUserPsw(String name,String tel);
 }
