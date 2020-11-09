@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  * @date 2020/10/12 17:38
  */
 @Component
-public class ActionAuthRedisCacheHandlerAdapter implements RedisCacheHandlerAdapter<User> {
+public class UserRedisCacheHandlerAdapter implements RedisCacheHandlerAdapter<User> {
 
 
     /**
