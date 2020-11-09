@@ -1,4 +1,4 @@
-package com.gongyuan.model;
+package com.gongyuan.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

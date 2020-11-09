@@ -1,9 +1,9 @@
 package com.gongyuan.controller;
 
 
-import com.gongyuan.model.Result;
-import com.gongyuan.model.ServiceException;
-import com.gongyuan.model.User;
+import com.gongyuan.common.Result;
+import com.gongyuan.common.ServiceException;
+import com.gongyuan.model.dto.User;
 import com.gongyuan.service.UserService;
 import jdk.nashorn.internal.ir.annotations.Reference;
 import org.springframework.web.bind.annotation.RequestBody;

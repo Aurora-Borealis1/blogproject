@@ -1,4 +1,4 @@
-package com.gongyuan.model;
+package com.gongyuan.model.dto;
 
 import lombok.Data;
 
@@ -13,6 +13,6 @@ public class User {
     private String tel;
     private String area;
     private Date createDate;
-    private Date updateeDate;
+    private Date updateDate;
     private int status;
 }

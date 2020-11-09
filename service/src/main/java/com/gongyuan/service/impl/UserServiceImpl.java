@@ -1,8 +1,7 @@
 package com.gongyuan.service.impl;
 
-import com.alibaba.dubbo.config.annotation.Service;
 import com.gongyuan.dao.UserMapper;
-import com.gongyuan.model.User;
+import com.gongyuan.model.dto.User;
 import com.gongyuan.service.UserService;
 
 import java.util.Date;

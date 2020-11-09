@@ -1,7 +1,7 @@
 package com.gongyuan.config;
 
-import com.gongyuan.model.Result;
-import com.gongyuan.model.ServiceException;
+import com.gongyuan.common.Result;
+import com.gongyuan.common.ServiceException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

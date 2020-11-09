@@ -1,7 +1,7 @@
 package com.gongyuan.argumentresolver;
 
 import com.gongyuan.anno.CurrentUser;
-import com.gongyuan.model.User;
+import com.gongyuan.model.dto.User;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;

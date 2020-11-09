@@ -1,6 +1,6 @@
 package com.gongyuan.dao;
 
-import com.gongyuan.model.User;
+import com.gongyuan.model.dto.User;
 
 /**
  * @author wushangyi
