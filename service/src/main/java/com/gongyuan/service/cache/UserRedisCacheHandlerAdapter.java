@@ -57,6 +57,7 @@ public class UserRedisCacheHandlerAdapter implements RedisCacheHandlerAdapter<Us
      * @return
      */
     @Cacheable(value = "redisCache",key = "'redis_user'")
+//    @Scheduled(cron = "25/55 * * * *")
     @Override
     public User select(User user) {
         return null;
