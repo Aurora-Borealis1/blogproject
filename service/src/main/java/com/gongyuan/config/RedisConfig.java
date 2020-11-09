@@ -17,7 +17,7 @@ public class RedisConfig {
      * 配置自定义redisTemplate
      * @return
      */
-    @Bean
+    @Bean(name = "myRedisTemplate")
     RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
 
         RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();

@@ -32,7 +32,7 @@ public class ExecutorConfig implements SchedulingConfigurer, AsyncConfigurer {
         //存活时间
         executor.setKeepAliveSeconds(60);
         //前缀
-        executor.setThreadNamePrefix("threadpool-");
+        executor.setThreadNamePrefix("threadPool-");
         //拒绝策略
         executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
         return executor;

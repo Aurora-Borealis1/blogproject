@@ -5,6 +5,8 @@ import com.gongyuan.common.Result;
 import com.gongyuan.model.dto.User;
 import com.gongyuan.service.UserService;
 import jdk.nashorn.internal.ir.annotations.Reference;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,17 +18,26 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2020/11/8 10:45
  */
 @RestController
+@RequestMapping("/user")
+//@LogAnalysis
 public class UserController {
     @Reference
     UserService userService;
 
+
     /**
      * 用户注册
+     * @param user 用户
+     * @return 返回信息
      */
     @RequestMapping("/userRegister")
+//    @LogAnalysis
+    //事务注解
+    @Transactional(rollbackFor = Exception.class,propagation = Propagation.REQUIRES_NEW)
+//    @Async(value = "threadPoolTaskExecutor")
     public Result userRegister(@Validated @RequestBody User user)  {
         //用户名及密码不能为空
-         userService.insertUser(user);
+        userService.insertUser(user);
         return Result.getSuccessfulResult("用户注册成功");
 
     }

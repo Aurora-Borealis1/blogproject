@@ -55,8 +55,6 @@ public class LogAnalysisInterceptor implements HandlerInterceptor {
             }
         }
 
-
-
     }
 
     @Override

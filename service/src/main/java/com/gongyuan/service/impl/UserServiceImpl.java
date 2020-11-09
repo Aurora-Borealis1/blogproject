@@ -3,6 +3,7 @@ package com.gongyuan.service.impl;
 import com.gongyuan.dao.UserMapper;
 import com.gongyuan.model.dto.User;
 import com.gongyuan.service.UserService;
+import org.springframework.scheduling.annotation.Async;
 
 import java.util.Date;
 
@@ -22,6 +23,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Async(value = "threadPoolTaskExecutor")
     public int insertUser(User user) {
         //校验用户名是否重复
         User newUser=queryUserByname(user.getName());

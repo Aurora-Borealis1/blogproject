@@ -14,6 +14,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ServiceException extends RuntimeException{
-    private String result;
-    private String msg;
+    public static final String USER_EXCEPTION = "用户接口异常";
 }

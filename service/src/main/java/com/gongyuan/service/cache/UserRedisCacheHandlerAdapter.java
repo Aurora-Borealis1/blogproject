@@ -23,7 +23,7 @@ public class UserRedisCacheHandlerAdapter implements RedisCacheHandlerAdapter<Us
      * @param user
      * @return
      */
-    @CachePut(value = "redisCache",key = "'redis_action_auth'")
+    @CachePut(value = "redisCache",key = "'redis_user'")
     @Override
     public int insert(User user) {
         return 0;
@@ -34,7 +34,7 @@ public class UserRedisCacheHandlerAdapter implements RedisCacheHandlerAdapter<Us
      * @param id
      * @return
      */
-    @CacheEvict(value = "redisCache",key = "'redis_action_auth'")
+    @CacheEvict(value = "redisCache",key = "'redis_user'")
     @Override
     public int deleteByPrimaryKey(String id) {
         return 0;
@@ -45,7 +45,7 @@ public class UserRedisCacheHandlerAdapter implements RedisCacheHandlerAdapter<Us
      * @param user
      * @return
      */
-    @CachePut(value = "redisCache",key = "'redis_action_auth'")
+    @CachePut(value = "redisCache",key = "'redis_user'")
     @Override
     public int update(User user) {
         return 0;
@@ -56,7 +56,7 @@ public class UserRedisCacheHandlerAdapter implements RedisCacheHandlerAdapter<Us
      * @param user
      * @return
      */
-    @Cacheable(value = "redisCache",key = "'redis_action_auth'")
+    @Cacheable(value = "redisCache",key = "'redis_user'")
     @Override
     public User select(User user) {
         return null;
