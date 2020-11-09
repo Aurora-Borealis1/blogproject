@@ -2,10 +2,10 @@ package com.gongyuan.controller;
 
 
 import com.gongyuan.common.Result;
-import com.gongyuan.common.ServiceException;
 import com.gongyuan.model.dto.User;
 import com.gongyuan.service.UserService;
 import jdk.nashorn.internal.ir.annotations.Reference;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,14 +24,8 @@ public class UserController {
      * 用户注册
      */
     @RequestMapping("/userRegister")
-    public Result userRegister(@RequestBody User user)  {
+    public Result userRegister(@Validated @RequestBody User user)  {
         //用户名及密码不能为空
-        if (user==null) {
-            return null;
-        }
-        if (null == user.getName() || "".equals(user.getName().trim()) || null == user.getPassword() || "".equals(user.getPassword().trim())) {
-            throw new ServiceException("9999","参数异常");
-        }
          userService.insertUser(user);
         return Result.getSuccessfulResult("用户注册成功");
 

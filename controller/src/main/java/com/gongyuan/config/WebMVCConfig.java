@@ -2,6 +2,7 @@ package com.gongyuan.config;
 
 import com.gongyuan.argumentresolver.UserArgumentResolver;
 import com.gongyuan.filter.MyFilter;
+import com.gongyuan.interceptor.LogAnalysisInterceptor;
 import com.gongyuan.interceptor.LoginInterceptor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -29,8 +30,11 @@ public class WebMVCConfig extends WebMvcConfigurationSupport {
     @Override
     protected void addInterceptors(InterceptorRegistry registry) {
         LoginInterceptor loginInterceptor = new LoginInterceptor();
+        LogAnalysisInterceptor logAnalysisInterceptor = new LogAnalysisInterceptor();
         registry.addInterceptor(loginInterceptor);
+        registry.addInterceptor(logAnalysisInterceptor);
         log.info("登陆拦截器注册成功======");
+        log.info("日志记录拦截器注册成功======");
     }
 
     /**

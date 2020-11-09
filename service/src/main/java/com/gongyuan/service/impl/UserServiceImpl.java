@@ -28,10 +28,9 @@ public class UserServiceImpl implements UserService {
         if (newUser != null) {
             return 0;
         }
-        newUser.setCreateDate(new Date());
-        newUser.setUpdateeDate(new Date());
-        userMapper.insertUser(newUser);
-        return 1;
+        user.setCreateDate(new Date());
+        user.setUpdateDate(new Date());
+        return userMapper.insertUser(user);
     }
 
     @Override

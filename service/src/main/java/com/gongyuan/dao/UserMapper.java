@@ -13,7 +13,7 @@ public interface UserMapper {
 
     User queryUserByname(String name);
 
-    void insertUser(User user);
+    int insertUser(User user);
 
     void updateUser(String name,String password);
 
