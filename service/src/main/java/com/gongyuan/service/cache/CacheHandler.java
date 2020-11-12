@@ -7,4 +7,5 @@ package com.gongyuan.service.cache;
  * @date 2020/10/13 9:57
  */
 public interface CacheHandler {
+    String getDefaultCacheName();
 }
