@@ -3,9 +3,6 @@ package com.gongyuan.service.impl;
 import com.gongyuan.dao.UserMapper;
 import com.gongyuan.model.dto.User;
 import com.gongyuan.service.UserService;
-import org.springframework.scheduling.annotation.Async;
-
-import java.util.Date;
 
 /**
  * @author wushangyi
@@ -18,21 +15,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User queryUserByname(String name) {
-        User user=userMapper.queryUserByname(name);
-        return user;
+        return userMapper.selectById(name);
     }
 
     @Override
-    @Async(value = "threadPoolTaskExecutor")
+//    @Async(value = "threadPoolTaskExecutor")
     public int insertUser(User user) {
-        //校验用户名是否重复
-        User newUser=queryUserByname(user.getName());
-        if (newUser != null) {
-            return 0;
-        }
-        user.setCreateDate(new Date());
-        user.setUpdateDate(new Date());
-        return userMapper.insertUser(user);
+        return userMapper.insert(user);
     }
 
     @Override

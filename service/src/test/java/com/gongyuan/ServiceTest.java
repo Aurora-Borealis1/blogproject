@@ -33,4 +33,9 @@ public class ServiceTest {
         List<User> userList = userMapper.selectList(null);
         userList.forEach(System.out::println);
     }
+
+    @Test
+    public  void test1(){
+
+    }
 }
