@@ -1,11 +1,14 @@
 package com.gongyuan;
 
-import com.gongyuan.util.RedisUtil;
+import com.gongyuan.dao.UserMapper;
+import com.gongyuan.model.dto.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.List;
 
 /**
  * @author Tww
@@ -14,11 +17,20 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ServiceApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ServiceTest {
+//    @Autowired
+//    RedisUtil redisUtil;
+
     @Autowired
-    RedisUtil redisUtil;
+    UserMapper userMapper;
 
     @Test
-    public void testRedis(){
-        redisUtil.set("firstName","wu");
+    public void testRedis() {
+//        redisUtil.set("firstName", "wu");
+    }
+
+    @Test
+    public void testMybatis() {
+        List<User> userList = userMapper.selectList(null);
+        userList.forEach(System.out::println);
     }
 }

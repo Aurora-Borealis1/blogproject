@@ -2,6 +2,8 @@ package com.gongyuan.controller;
 
 
 import com.gongyuan.common.Result;
+import com.gongyuan.common.ServiceException;
+import com.gongyuan.enumration.ExceptionMessageEnum;
 import com.gongyuan.model.dto.User;
 import com.gongyuan.service.UserService;
 import jdk.nashorn.internal.ir.annotations.Reference;
@@ -19,7 +21,6 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/user")
-//@LogAnalysis
 public class UserController {
     @Reference
     UserService userService;
@@ -27,54 +28,52 @@ public class UserController {
 
     /**
      * 用户注册
+     *
      * @param user 用户
      * @return 返回信息
      */
     @RequestMapping("/userRegister")
-//    @LogAnalysis
     //事务注解
-    @Transactional(rollbackFor = Exception.class,propagation = Propagation.REQUIRES_NEW)
-//    @Async(value = "threadPoolTaskExecutor")
+    @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRES_NEW)
     public Result userRegister(@Validated @RequestBody User user)  {
-        //用户名及密码不能为空
-        userService.insertUser(user);
+        int result = userService.insertUser(user);
+        if(result==0)throw new ServiceException(ExceptionMessageEnum.USER_EXCEPTION);
         return Result.getSuccessfulResult("用户注册成功");
-
     }
 
     /**
      * 用户登陆
+     *
+     * @param name,password 用户名，密码
+     * @return 返回信息
      */
     @RequestMapping("/userlogin")
-    public String userlogin(@RequestParam("name") String name, @RequestParam("password") String password) {
-        if(name==null || "".equals(name.trim()) ||password==null || "".equals(password.trim()) ) {
-            return "请输入用户名或密码";
-        }
+    public Result userlogin(@RequestParam("name") String name, @RequestParam("password") String password) {
         User user = userService.queryUserByname(name);
-        return "登陆成功！";
+        return Result.getSuccessfulResult("登陆成功");
     }
 
     /**
      * 修改用户信息
+     *
+     * @param user 用户
+     * @return 返回信息
      */
     @RequestMapping("/updateUser")
-    public String updateUser(@RequestBody User user) {
-        if(user.getId()<=0){
-            return null;
-        }
+    public Result updateUser(@Validated @RequestBody User user) {
         userService.updateUser(user);
-        return "修改成功！";
+        return Result.getSuccessfulResult("修改成功");
     }
 
     /**
      * 修改用户密码
+     *
+     * @param name,tel 用户名，联系方式
+     * @return 返回信息
      */
     @RequestMapping("/updateUserPsw")
-    public String updateUserPsw(@RequestParam("name") String name, @RequestParam("tel") String tel) {
-        if(name==null ||"".equals(name.trim())){
-            return null;
-        }
-        userService.updateUserPsw(name,tel);
-        return "密码修改成功，请重新登陆！";
+    public Result updateUserPsw(@RequestParam("name") String name, @RequestParam("tel") String tel) {
+        userService.updateUserPsw(name, tel);
+        return Result.getSuccessfulResult("密码修改成功，请重新登陆！");
     }
 }

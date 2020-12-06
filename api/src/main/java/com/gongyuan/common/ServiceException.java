@@ -1,9 +1,9 @@
 package com.gongyuan.common;
 
+import com.gongyuan.enumration.ExceptionMessageEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
 /**
  * @author wushangyi
@@ -12,7 +12,17 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
+//@NoArgsConstructor
 public class ServiceException extends RuntimeException{
-    public static final String USER_EXCEPTION = "用户接口异常";
+
+
+    public ServiceException(String message) {
+        super(message);
+    }
+
+
+    public ServiceException(ExceptionMessageEnum exceptionMessageEnumssage) {
+        super(exceptionMessageEnumssage.getMessage());
+    }
 }
+

@@ -3,10 +3,16 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gongyuan.dao">
-    <resultMap id="resultMap" type="com.gongyuan.d">
+    <resultMap id="resultMap" type="com.gongyuan.model.dto.User">
         <id property="id" column="id"/>
-        <result property="age" column="age"/>
-        <result property="name" column="name"/>
+        <result property="name" column="NAME"/>
+        <result property="gender" column="GENDER"/>
+        <result property="password" column="PASSWORD"/>
+        <result property="tel" column="TEL"/>
+        <result property="area" column="AREA"/>
+        <result property="createDate" column="CREATEDATE"/>
+        <result property="updateDate" column="UPDATEDATE"/>
+        <result property="status" column="STATUS"/>
     </resultMap>
 
 </mapper>
